@@ -1,7 +1,8 @@
 'use client';
 import React from "react";
+import { useSearchParams } from 'next/navigation';
 
-export default function Sidebar({ currentSection }: { currentSection: string }) {
+export default function Sidebar() {
   const menu = [
     { key: "profile", label: "Hồ sơ", icon: "bx bx-user-circle" },
     { key: "dashboard", label: "Bảng điều khiển", icon: "bx bx-home-circle" },
@@ -29,6 +30,9 @@ export default function Sidebar({ currentSection }: { currentSection: string }) 
     }
   }
 
+  // Lấy section hiện tại từ searchParams (ví dụ: ?section=profile)
+  const searchParams = useSearchParams();
+  const currentSection = searchParams.get('section') || "profile";
   return (
     <aside className="app-sidebar">
       <div className="app-sidebar__user">

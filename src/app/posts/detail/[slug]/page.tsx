@@ -39,7 +39,10 @@ async function getRecentPosts(): Promise<Post[]> {
     .slice(0, 5);
 }
 
-const PostDetailPage = async ({ params }: { params: { slug: string } }) => {
+const PostDetailPage = async ({ params, searchParams }: {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) => {
   const slug = params.slug;
   const post = await getPost(slug);
   const recentPosts = await getRecentPosts();

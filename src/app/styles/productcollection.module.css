@@ -13,11 +13,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-:global(.swiper),
-:global(.swiper-wrapper),
-:global(.swiper-slide) {
-  background-color: white !important;
-}
+/* ...existing code... */
  
 .bangTruot {
     background-color: white !important;
@@ -34,8 +30,7 @@
 }
 
 .theSanPham img {
-    background-color: white !important;
-
+  background-color: white !important;
   width: 100%;
   height: auto;
   display: block;
@@ -46,21 +41,27 @@
 /* Swiper arrows custom */
 .swiper-button-prev,
 .swiper-button-next {
-  color: #d63384;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  border-radius: 50%;
-  top: 40%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: #d63384;
-  color: #fff;
-}
-.theSanPham {
-  background-color: white !important;
+  .tenSanPham {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 14px 0 12px 0;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    text-align: center;
+    border-radius: 0 0 16px 16px;
+    opacity: 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    transition: transform 0.35s cubic-bezier(.4,2,.6,1), opacity 0.25s;
+    pointer-events: none;
+    z-index: 2;
+    transform: translateY(100%);
+  }
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -70,8 +71,9 @@
 .tenSanPham {
   position: absolute;
   bottom: -17px;
-  left: 0;
-  width: 100%;
+  text-align: center;
+    right: 0;
+    width: 100%;
   padding: 10px 0;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
